@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="eb3068d8-10fd-4c9f-a811-17d26034f0f1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FileAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FileAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1iejzw3ASnOXhHbZ1DjL2Dmfb5e" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575357028024" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="HDFSExample" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eb3068d8-10fd-4c9f-a811-17d26034f0f1" name="Default Changelist" comment="" />
+      <created>1575180275138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575180275138</updated>
+    </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1602334944401</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602334944401</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="530" y="186" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1602413555594">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="530" y="186" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1602413555594" />
+    <state x="451" y="25" key="CommitChangelistDialog2" timestamp="1602334942504">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="451" y="25" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1602334942504" />
+    <state width="1557" height="307" key="GridCell.Tab.0.bottom" timestamp="1602413167622">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="307" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1602413167622" />
+    <state width="1557" height="307" key="GridCell.Tab.0.center" timestamp="1602413167622">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="307" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1602413167622" />
+    <state width="1557" height="307" key="GridCell.Tab.0.left" timestamp="1602413167622">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="307" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1602413167622" />
+    <state width="1557" height="307" key="GridCell.Tab.0.right" timestamp="1602413167622">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="307" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1602413167622" />
+    <state x="496" y="255" key="com.intellij.ide.util.TipDialog" timestamp="1602410511620">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="496" y="255" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1602410511620" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
