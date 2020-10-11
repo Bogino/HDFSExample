@@ -2,20 +2,14 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FileAccess
 {
     private FileSystem hdfs;
-
-    private static String symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     /**
      * Initializes the class, using rootPath as "/" directory
      *
@@ -44,7 +38,14 @@ public class FileAccess
     public void create(String path)
     {
         try {
-            hdfs.create(new Path(path));
+            if (hdfs.exists(new Path(path))){
+                delete(path);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            hdfs.createNewFile(new Path(path));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -59,16 +60,12 @@ public class FileAccess
     public void append(String path, String content)
     {
         try {
-            OutputStream os = hdfs.create(new Path(path));
-            BufferedWriter br = new BufferedWriter(
-                new OutputStreamWriter(os, "UTF-8")
-        );
-
-        br.write(content);
-        br.flush();
-        br.close();
-        hdfs.close();
-    }catch (Exception e){
+            OutputStream os = hdfs.append(new Path(path));
+            BufferedWriter br = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+            br.write(content);
+            br.flush();
+            br.close();
+    }catch (IOException e){
             e.printStackTrace();
         }
     }
@@ -80,7 +77,20 @@ public class FileAccess
      * @return
      */
     public String read(String path) {
-        return new Path(path).toString();
+        StringBuilder builder = new StringBuilder();
+        Path file = new Path(path);
+        try {
+            BufferedReader breader = new BufferedReader(new InputStreamReader(hdfs.open(file)));
+            String str;
+            while ((str = breader.readLine()) != null) {
+                builder.append(str);
+                builder.append("\n");
+            }
+            return builder.toString();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return builder.toString();
     }
 
     /**
@@ -123,17 +133,15 @@ public class FileAccess
      */
     public List<String> list(String path)
     {
-       return  null;
+        ArrayList<String> files = new ArrayList<>();
+        try {
+            files.add(hdfs.listFiles(new Path(path), true).next().toString());
+            System.out.println(hdfs.listFiles(new Path(path), true).next().getPath().getName());
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return files;
     }
 
-    private static String getRandomWord()
-    {
-        StringBuilder builder = new StringBuilder();
-        int length = 2 + (int) Math.round(10 * Math.random());
-        int symbolsCount = symbols.length();
-        for(int i = 0; i < length; i++) {
-            builder.append(symbols.charAt((int) (symbolsCount * Math.random())));
-        }
-        return builder.toString();
-    }
 }
