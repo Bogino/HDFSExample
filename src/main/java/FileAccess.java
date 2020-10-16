@@ -4,6 +4,7 @@ import org.apache.hadoop.fs.Path;
 
 import java.io.*;
 import java.net.URI;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,20 +36,13 @@ public class FileAccess
      *
      * @param path
      */
-    public void create(String path)
+    public void create(String path) throws IOException
     {
-        try {
-            if (hdfs.exists(new Path(path))){
+        if (hdfs.exists(new Path(path)))
                 delete(path);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            hdfs.createNewFile(new Path(path));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
+        hdfs.createNewFile(new Path(path));
+
     }
 
     /**
@@ -57,15 +51,12 @@ public class FileAccess
      * @param path
      * @param content
      */
-    public void append(String path, String content)
-    {
-        try {
-            OutputStream os = hdfs.append(new Path(path));
-            BufferedWriter br = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+    public void append(String path, String content) {
+        try (BufferedWriter br = new BufferedWriter(
+                new OutputStreamWriter(hdfs.append(new Path(path)), StandardCharsets.UTF_8))) {
             br.write(content);
             br.flush();
-            br.close();
-    }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -76,19 +67,14 @@ public class FileAccess
      * @param path
      * @return
      */
-    public String read(String path) {
-        StringBuilder builder = new StringBuilder();
+    public String read(String path) throws IOException {
         Path file = new Path(path);
-        try {
-            BufferedReader breader = new BufferedReader(new InputStreamReader(hdfs.open(file)));
-            String str;
-            while ((str = breader.readLine()) != null) {
-                builder.append(str);
-                builder.append("\n");
-            }
-            return builder.toString();
-        }catch (Exception e){
-            e.printStackTrace();
+        BufferedReader breader = new BufferedReader(new InputStreamReader(hdfs.open(file)));
+        StringBuilder builder = new StringBuilder();
+        String str;
+        while ((str = breader.readLine()) != null) {
+            builder.append(str);
+            builder.append("\n");
         }
         return builder.toString();
     }
@@ -113,16 +99,8 @@ public class FileAccess
      * @param path
      * @return
      */
-    public boolean isDirectory(String path)
-    {
-        try {
-            if (hdfs.exists(new Path(path))) {
-                return true;
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return false;
+    public boolean isDirectory(String path) throws IOException {
+        return hdfs.getFileStatus(new Path(path)).isDirectory();
     }
 
     /**

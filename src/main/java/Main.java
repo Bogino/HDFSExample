@@ -1,7 +1,7 @@
 public class Main
 {
     private static String symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    private static String path = "/root/file_bogino1.txt";
+    private static String path = "/root/file_bogino777.txt";
 
     public static void main(String[] args) throws Exception {
 
